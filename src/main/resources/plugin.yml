@@ -7,9 +7,10 @@ website: ${url}
 main: ${mainClass}
 
 commands:
-    example:
+    mpx:
         description: An example command
-        permission: spigotplugin.example
+        permission: minecraft_slp.mpx
+        permission-message: You do not have permission to use this command.
         usage: /<command>
 
 permissions: {}

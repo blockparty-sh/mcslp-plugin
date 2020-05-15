@@ -1,22 +1,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>me.sgray.template</groupId>
-    <artifactId>SpigotPlugin</artifactId>
+    <groupId>sh.blockparty.template</groupId>
+    <artifactId>Minecraft_SLP</artifactId>
     <!-- Version is used in plugin.yml -->
     <version>0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <!-- Plugin Information -->
     <!-- Name, Description, and URL are used in plugin.yml -->
-    <name>SpigotPlugin</name>
-    <description>Example of a Spigot plugin using Maven</description>
-    <url>http://sgray.me/project/spigotplugin</url>
+    <name>Minecraft_SLP</name>
+    <description>SLP </description>
+    <url>http://blockparty.sh/project/slpplugin</url>
 
     <licenses>
         <license>
             <name>Zlib License</name>
             <url>http://opensource.org/licenses/Zlib</url>
-            <comments>Copyright (c) 2014 Shaila Gray
+            <comments>Copyright (c) 2020 Blockparty
             This software is provided 'as-is', without any express or implied
             warranty. In no event will the authors be held liable for any damages
             arising from the use of this software.
@@ -40,15 +40,15 @@
 
     <developers>
         <developer>
-                <name>Shaila Gray</name>
-                <url>http://sgray.me</url>
+                <name>Jt Freeman</name>
+                <url>https://blockparty.sh</url>
         </developer>
     </developers>
 
     <properties>
         <!--  Author and MainClass are used in plugin.yml -->
-        <author>SGray</author>
-        <mainClass>me.sgray.template.spigotplugin.SpigotPlugin</mainClass>
+        <author>Blockparty</author>
+        <mainClass>sh.blockparty.template.spigotplugin.SpigotPlugin</mainClass>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
