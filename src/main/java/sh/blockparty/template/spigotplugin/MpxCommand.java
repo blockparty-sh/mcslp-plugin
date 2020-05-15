@@ -10,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.UUID;
@@ -44,10 +45,21 @@ public class MpxCommand implements CommandExecutor {
                 public void run() {
                     BufferedReader reader = null;
                     try {
-                        String uuid = ((Player) sender).getUniqueId().toString();
                         String password = "password";
-                        URL url = new URL("http://127.0.0.1:8222/api/minecraft/command?password="+password+"&uuid="+uuid+"&q="+q);
-                        reader = new BufferedReader(new InputStreamReader(url.openStream()));
+                        String uuid = ((Player) sender).getUniqueId().toString();
+                        URL url = new URL("http://127.0.0.1:8222/api/command/minecraft?uuid="+uuid+"&q="+q);
+                        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                        conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+                        conn.setRequestProperty("Accept", "application/json");
+                        conn.setRequestProperty("X-Auth-Token", password);
+                        conn.setRequestMethod("POST");
+
+                        int respCode = conn.getResponseCode(); 
+                        if (respCode != HttpURLConnection.HTTP_OK) {
+                            throw new IOException("response code not OK");
+                        }
+
+                        reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                         StringBuffer buffer = new StringBuffer();
                         int read;
                         char[] chars = new char[1024];
